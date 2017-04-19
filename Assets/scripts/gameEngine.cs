@@ -65,16 +65,14 @@ public class gameEngine : MonoBehaviour {
         population = new GameObject[populationSize];
         fitnessScores = new float[populationSize];
         // This loop creates the car population, runs the simulation while calculating fitness score
-        for (int i = 0; i < populationSize; i++)
-        {
-            // generate a car
-            population[i] = generateCar();
-            // give it a unique name
-            population[i].name += "_" + i;
-            population[i].gameObject.SetActive(false);
-            
-        }
         
+            // generate a car
+            population[currentCar] = generateCar();
+            // give it a unique name
+            population[currentCar].name += "_" + currentCar;
+            population[currentCar].gameObject.SetActive(false);
+            
+                
     }
 
     private void runSimulation()
